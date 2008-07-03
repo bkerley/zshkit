@@ -1,0 +1,13 @@
+function git-branch-name () {
+	git branch 2> /dev/null | grep ^\* | sed s/^\*\ //
+}
+function gsrb () {
+	branch=$(git-branch-name) 
+	git checkout master
+	git svn rebase
+	git checkout "${branch}"
+	git rebase master
+}
+function git-branch-name-for-prompt() {
+	[ x$branch != x ] && echo " %U%B$(git-branch-name)%b%u "
+}
