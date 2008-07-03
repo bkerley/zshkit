@@ -1,0 +1,5 @@
+cp ~/.zshenv ~/zshenv.pre_zshkit
+cp ~/.zshrc ~/zshrc._pre_zshkit
+mydir=`dirname $0`
+echo "source $mydir/env" > ~/.zshenv
+echo "source $mydir/rc" > ~/.zshrc
