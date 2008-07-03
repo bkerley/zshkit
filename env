@@ -1,10 +1,8 @@
-alias irb='irb --readline -r irb/completion'
+mydir=`dirname $0`
 
-source 05_editor
-source 05_grep
-source 05_ls
-
-source 06_history
+for f in $mydir/??_*; do
+	source $f
+done
 
 function git-branch-name-for-prompt() {
  branch=$(git branch 2>/dev/null | grep ^\*)
