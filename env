@@ -1,9 +1,9 @@
-JRUBY_HOME=/opt/jruby
-alias svnid='svn propset svn:keywords "Id"'
 alias irb='irb --readline -r irb/completion'
-alias grep='ggrep --color'
+
 source 05_editor
+source 05_grep
 source 05_ls
+
 source 06_history
 
 function git-branch-name-for-prompt() {
