@@ -4,7 +4,7 @@ alias rls=/bin/ls
 alias svnid='svn propset svn:keywords "Id"'
 alias irb='irb --readline -r irb/completion'
 alias grep='ggrep --color'
-EDITOR="mate -w"
+source 05_editor
 export EDITOR
 export HISTFILE=~/.history
 export HISTSIZE=1000
