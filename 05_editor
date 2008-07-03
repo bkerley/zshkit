@@ -1,0 +1,8 @@
+if [[ -x `which mate` ]]; then
+	EDITOR=mate
+elif [[ -x `which nano` ]]; then
+	EDITOR=nano
+else
+	EDITOR=vi
+fi
+
