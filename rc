@@ -1,0 +1,4 @@
+PATH=/opt/local/bin:$PATH:/usr/local/bin:/usr/local/sbin:/opt/jruby/bin
+CPATH=/opt/local/include:$CPATH
+PROMPT='%B%n%b@%m %~`git-branch-name-for-prompt`%(!.#.>) '
+MANPATH=$MANPATH:/usr/local/man:/opt/local/man
