@@ -1,0 +1,3 @@
+# I want /opt/local/bin to take precedence
+path=(/opt/local/bin $path /usr/local/bin /usr/local/sbin)
+
