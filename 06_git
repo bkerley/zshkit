@@ -10,6 +10,6 @@ if [[ -x `which git` ]]; then
 		git rebase master
 	}
 	function git-branch-name-for-prompt() {
-		[ x$branch != x ] && echo " %U%B$(git-branch-name)%b%u "
+		[ x$branch != x ] && echo " %{$fg[cyan]%}$(git-branch-name)$reset_color "
 	}
 fi
