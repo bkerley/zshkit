@@ -6,8 +6,9 @@ if [[ -x `which git` ]]; then
 	
 	function zshkit-update () {
 		pushd $mydir
-		git pull 
-		source env
+		git pull
+		source ~/.zshrc
+		source ~/.zshenv
 		popd
 	}
 fi
