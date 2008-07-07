@@ -1,2 +1,2 @@
 autoload -U colors && colors
-PROMPT='%B%n%b@%m %~`git-branch-name-for-prompt`%(!.#.>) '
+PROMPT='%B%n%b@%m %~`git-prompt`%(!.#.>) '

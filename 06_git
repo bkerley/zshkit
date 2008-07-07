@@ -2,6 +2,10 @@ if [[ -x `which git` ]]; then
 	function git-branch-name () {
 		git branch 2> /dev/null | grep ^\* | sed s/^\*\ //
 	}
+	function git-dirty () {
+		git status | grep "nothing to commit (working directory clean)"
+		echo $?
+	}
 	function gsrb () {
 		branch=$(git-branch-name) 
 		git checkout master
@@ -9,7 +13,12 @@ if [[ -x `which git` ]]; then
 		git checkout "${branch}"
 		git rebase master
 	}
-	function git-branch-name-for-prompt() {
-		[ x$branch != x ] && echo " %{$fg[cyan]%}$(git-branch-name)$reset_color "
+	function git-prompt() {
+		branch=$(git-branch-name)
+		if [[ x$branch != x ]]; then
+			dirty_color=$fg[cyan]
+			if [[ $(git-dirty) = 1 ]]; then; dirty_color=$fg[magenta]; fi
+			[ x$branch != x ] && echo " %{$dirty_color%}$(git-branch-name)$reset_color "
+		fi
 	}
 fi
