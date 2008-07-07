@@ -17,8 +17,8 @@ if [[ -x `which git` ]]; then
 		branch=$(git-branch-name)
 		if [[ x$branch != x ]]; then
 			dirty_color=$fg[cyan]
-			if [[ $(git-dirty) = 1 ]]; then; dirty_color=$fg[magenta]; fi
-			[ x$branch != x ] && echo " %{$dirty_color%}$(git-branch-name)$reset_color "
+			if [[ $(git-dirty) = 1 ]] { dirty_color=$fg[magenta] }
+			[ x$branch != x ] && echo " %{$dirty_color%}$(git-branch-name)%{$reset_color%} "
 		fi
 	}
 fi
