@@ -5,10 +5,12 @@ if [[ -x `which git` ]]; then
 	fi
 	
 	function zshkit-update () {
+		pushd $HOME
 		pushd $mydir
 		git pull
-		source ~/.zshrc
-		source ~/.zshenv
+		popd
+		source .zshrc
+		source .zshenv
 		popd
 	}
 fi
