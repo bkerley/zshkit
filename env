@@ -5,8 +5,3 @@ setopt prompt_subst
 for f in $mydir/??_*; do
 	source $f
 done
-
-function git-branch-name-for-prompt() {
- branch=$(git branch 2>/dev/null | grep ^\*)
- [ x$branch != x ] && echo " %U%B${branch/* /}%b%u "
-}
