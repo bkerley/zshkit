@@ -1,2 +1,1 @@
-autoload -U colors && colors
-PROMPT='%B%n%b@%m %~`git-prompt`%(!.#.>) '
+PROMPT='%{$reset_color%}%B%n%b@%m %~`git-prompt`%(!.#.>) '
