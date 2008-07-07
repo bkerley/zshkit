@@ -1,0 +1,13 @@
+if [[ -x `which git` ]]; then
+	mydir=`dirname $0`
+	if [[ $mydir = . ]]; then
+		mydir=`pwd`
+	fi
+	
+	function zshkit-update () {
+		pushd $mydir
+		git pull 
+		source env
+		popd
+	}
+fi
