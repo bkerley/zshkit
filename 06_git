@@ -21,4 +21,8 @@ if [[ -x `which git` ]]; then
 			[ x$branch != x ] && echo " %{$dirty_color%}$(git-branch-name)%{$reset_color%} "
 		fi
 	}
+	function git-scoreboard () {
+		git log | grep Author | sort | uniq -ci | sort -r
+	}
+	
 fi
