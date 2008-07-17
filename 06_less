@@ -1,0 +1,2 @@
+export LESS="-R -M --shift 5"                               
+export LESSOPEN="|lesspipe.sh %s"
