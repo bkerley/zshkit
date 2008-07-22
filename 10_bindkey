@@ -1,2 +1,4 @@
-bindkey "${key[Home]}" beginning-of-line
-bindkey "${key[End]}" end-of-line
+if [[ -f ~/.zkbd/$TERM-$VENDOR-$OSTYPE ]]; then
+	bindkey "${key[Home]}" beginning-of-line
+	bindkey "${key[End]}" end-of-line
+fi
