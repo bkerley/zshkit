@@ -3,7 +3,7 @@ if [[ -x `which git` ]]; then
 		git branch 2> /dev/null | grep ^\* | sed s/^\*\ //
 	}
 	function git-dirty () {
-		git status | grep "nothing to commit (working directory clean)"
+		git status 2> /dev/null | grep "nothing to commit (working directory clean)"
 		echo $?
 	}
 	function gsrb () {
