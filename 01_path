@@ -1,8 +1,5 @@
-# Don't continually append to path for nested shells
-if [[ $SHLVL == 1 ]]; then
-	# I want /opt/local/bin to take precedence
-	path=(/opt/local/bin $path /usr/local/bin /usr/local/sbin)
+# I want /opt/local/bin to take precedence
+path=(/opt/local/bin $path)
 
-	# Allow MacPorts man pages
-	manpath=($manpath /opt/local/man)
-fi
+# Allow MacPorts man pages
+manpath=($manpath /opt/local/man)
