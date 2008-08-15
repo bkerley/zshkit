@@ -25,8 +25,8 @@ if [[ -x `which git` ]]; then
 		git log | grep Author | sort | uniq -ci | sort -r
 	}
 	function github-init () {
-		git config branch.master.remote origin
-		git config branch.master.merge refs/heads/master
+		git config branch.$(git-branch-name).remote origin
+		git config branch.$(git-branch-name).merge refs/heads/master
 	}
 	
 fi
