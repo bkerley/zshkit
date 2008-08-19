@@ -38,4 +38,7 @@ if [[ -x `which git` ]]; then
 		open $(github-url)
 	}
 	
+	function nhgk () {
+		nohup gitk --all &
+	}
 fi
