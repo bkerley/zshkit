@@ -28,4 +28,8 @@ if [[ $OSTYPE[1,6] == "darwin" ]]; then
 		ps pdf html dmg; do
 		alias -s $s=open
 	done
+
+	# Seems to be the best OS X jump-to-github alias from http://tinyurl.com/2mtncf
+	alias github="open \`git config -l | grep 'remote.origin.url' | sed -En \
+  's/remote.origin.url=git(@|:\/\/)github.com(:|\/)(.+)\/(.+).git/https:\/\/github.com\/\3\/\4/p'\`"	
 fi
