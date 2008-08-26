@@ -28,4 +28,8 @@ if [[ $OSTYPE[1,6] == "darwin" ]]; then
 		ps pdf html dmg; do
 		alias -s $s=open
 	done
+  # Add filename-only alias for mdfind
+	function mdloc () {
+    mdfind "kMDItemFSName == '$*'wc"
+	}
 fi
