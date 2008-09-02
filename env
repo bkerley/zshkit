@@ -1,5 +1,4 @@
-# Don't re-env for nested shells
-if [[ $SHLVL == 1 ]]; then
+if [[ $SHLVL < 3 ]]; then
 	mydir=`dirname $0`
 
 	for f in $mydir/??_*; do
