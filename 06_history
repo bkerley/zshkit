@@ -5,3 +5,5 @@ SHARE_HISTORY=1
 EXTENDED_HISTORY=1
 HIST_EXPIRE_DUPS_FIRST=1
 
+# Grep the history with 'h'
+h () { history 0 | grep $1 }
