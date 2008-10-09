@@ -1,5 +1,5 @@
 # I want /opt/local/bin to take precedence
-path=(/opt/local/bin $path /usr/local/mysql/bin/ /opt/git/bin)
+path=(/opt/local/bin $path /usr/local/mysql/bin/ /opt/git/bin $HOME/bin)
 
 # Allow MacPorts man pages
 manpath=($manpath /opt/local/man)
