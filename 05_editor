@@ -7,10 +7,22 @@ function not_run_from_ssh () {
 
 if [[ -x `which mate` && $(not_run_from_ssh) = 1 ]]; then
 	EDITOR="mate -w"
+	alias e="mate"
+	# Useful functions for bundle development
+	function reload_textmate(){
+		osascript -e 'tell app "TextMate" to reload bundles'
+	}
+	function bundle () {
+		cd "$HOME/Library/Application Support/TextMate/Bundles/$1.tmbundle"
+	}
 elif [[ -x `which nano` ]]; then
 	EDITOR=nano
 elif [[ -x `which pico` ]]; then
 	EDITOR=pico
+elif [[ -x `which gvim` ]]; then
+	EDITOR=gvim
+elif [[ -x `which vim` ]]; then
+	EDITOR=vim
 else
 	EDITOR=vi
 fi
@@ -29,3 +41,4 @@ if [[ $OSTYPE[1,6] == "darwin" ]]; then
 		alias -s $s=open
 	done
 fi
+
