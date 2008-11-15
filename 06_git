@@ -1,5 +1,5 @@
 if [[ -x `which git` ]]; then
-	alias g=git
+	git_enable=1
 	function git-branch-name () {
 		git branch 2> /dev/null | grep '^\*' | sed 's/^\*\ //'
 	}
@@ -14,14 +14,24 @@ if [[ -x `which git` ]]; then
 		git checkout "${branch}"
 		git rebase master
 	}
+	function git-toggle() {
+		if [[ $git_enable = 1 ]]; then
+			git_enable=0
+		else
+			git_enable=1
+		fi
+	}
 	function git-prompt() {
-		gstatus=$(git status 2> /dev/null)
-		branch=$(echo $gstatus | head -1 | sed 's/^# On branch //')
-		dirty=$(echo $gstatus | sed 's/^#.*$//' | tail -2 | grep 'nothing to commit (working directory clean)'; echo $?)
-		if [[ x$branch != x ]]; then
-			dirty_color=$fg[cyan]
-			if [[ $dirty = 1 ]] { dirty_color=$fg[magenta] }
-			[ x$branch != x ] && echo " %{$dirty_color%}$branch%{$reset_color%} "
+		dirty_color=$fg[cyan]
+		if [[ $git_enable = 1 ]]; then
+			gstatus=$(git status 2> /dev/null)
+			branch=$(echo $gstatus | head -1 | sed 's/^# On branch //')
+			dirty=$(echo $gstatus | sed 's/^#.*$//' | tail -2 | grep 'nothing to commit (working directory clean)'; echo $?)
+			if [[ x$branch != x ]]; then
+				if [[ $dirty = 1 ]] { dirty_color=$fg[magenta] }
+				[ x$branch != x ] && echo " %{$dirty_color%}$branch%{$reset_color%} "
+		else
+			echo "%{$dirty_color%}!%{$reset_color%}"
 		fi
 	}
 	function git-scoreboard () {
