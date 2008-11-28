@@ -3,7 +3,7 @@ if [[ -x `which qt_export` ]]; then
   create_image_mov() {
     if [[ $# = 0 ]]
     then
-      echo "Usage:     $0 program"
+      echo "Usage:     $0 image_name move_name"
       echo "Create movie using png compression."
       echo "Example:   $0 watershed_01.png (outputs watershed.mov)"
       echo "Example:   $0 watershed_01.png out.mov (outputs out.mov)"
