@@ -27,6 +27,12 @@ if [[ -x `which git` ]]; then
 	function git-scoreboard () {
 		git log | grep Author | sort | uniq -ci | sort -r
 	}
+	function git-track () {
+		branch=$(git-branch-name)
+		git config branch.$branch.remote origin
+		git config branch.$branch.merge refs/heads/$branch
+		echo "tracking origin/$tracking"
+	}
 	function github-init () {
 		git config branch.$(git-branch-name).remote origin
 		git config branch.$(git-branch-name).merge refs/heads/$(git-branch-name)
