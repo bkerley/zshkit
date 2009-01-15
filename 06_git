@@ -1,5 +1,11 @@
 if [[ -x `which git` ]]; then
 	git_enable=1
+
+	alias g=git
+	alias gco=git-checkout
+	alias gb=git-branch
+	alias gam='git-commit -a -m '
+
 	function git-branch-name () {
 		git branch 2> /dev/null | grep '^\*' | sed 's/^\*\ //'
 	}
