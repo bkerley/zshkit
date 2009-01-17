@@ -1,4 +1,4 @@
-path=(/opt/local/bin $path /usr/local/mysql/bin/ /opt/git/bin $HOME/bin /usr/local/bin $HOME/.gem/ruby/1.8/bin /usr/local/texlive/2008/bin/universal-darwin/)
+path=(/opt/local/bin $path /usr/local/mysql/bin/ /opt/git/bin $HOME/bin /usr/local/bin $HOME/.gem/ruby/1.8/bin /usr/texbin)
 
 # Allow MacPorts man pages
 manpath=($manpath /opt/local/man)
