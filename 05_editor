@@ -5,6 +5,8 @@ function not_run_from_ssh () {
 	echo $?
 }
 
+if [[ -x `which aquamacs` ]] alias am=aquamacs
+
 if [[ -x `which mate` && $(not_run_from_ssh) = 1 ]]; then
 	EDITOR="mate -w"
 	alias e="mate"
