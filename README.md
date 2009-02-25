@@ -1,8 +1,7 @@
-Matt Foster's zshkit fork
--------------------------
+Bryce Kerley's zshkit fork
+--------------------------
 
-An easily extensible collection of `stuff` for zsh.
+My way-overdone zsh config scripts.  Fork and edit your own copy (with the **MAGIC** of git).
 
-## Prompt info
+[mostly-empty wiki](http://wiki.github.com/bkerley/zshkit)
 
-I'm currently playing with the prompt, using `vcs_info`. For this to work, you'll need a version zsh > 4.3.6 (IIRC).
