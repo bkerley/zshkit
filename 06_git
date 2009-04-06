@@ -20,7 +20,12 @@ if [[ -x `which git` ]]; then
 		git checkout "${branch}"
 		git rebase master
 	}
-	function git-toggle() {
+  function git-need-to-push() {
+    if pushtime=$(git status | grep 'Your branch is ahead' 2> /dev/null); then
+      echo "↑ "
+    fi
+  }
+  function git-toggle() {
 		if [[ $git_enable = 1 ]]; then
 			git_enable=0
 		else
@@ -31,11 +36,12 @@ if [[ -x `which git` ]]; then
 		dirty_color=$fg[cyan]
 		if [[ $git_enable = 1 ]]; then
 			gstatus=$(git status 2> /dev/null)
+      push_status=$(git-need-to-push)
 			branch=$(echo $gstatus | head -1 | sed 's/^# On branch //')
 			dirty=$(echo $gstatus | sed 's/^#.*$//' | tail -2 | grep 'nothing to commit (working directory clean)'; echo $?)
 			if [[ x$branch != x ]]; then
 				if [[ $dirty = 1 ]] { dirty_color=$fg[magenta] }
-				[ x$branch != x ] && echo "%{$dirty_color%}$branch%{$reset_color%} "
+				[ x$branch != x ] && echo "%{$dirty_color%}$branch%{$reset_color%} $push_status "
 			fi
 		else
 			echo "%{$dirty_color%}!%{$reset_color%} "
