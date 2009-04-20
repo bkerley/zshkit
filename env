@@ -1,4 +1,4 @@
-if [[ $SHLVL < 3 ]]; then
+if [[ ( $SHLVL < 3 ) || ( $INSIDE_EMACS == * ) ]]; then
 	mydir=`dirname $0`
 
 	for f in $mydir/??_*; do
