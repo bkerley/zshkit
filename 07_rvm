@@ -1,5 +1,5 @@
 function ruby-version-prompt () {
     if [[ -n $RUBY_VERSION ]]; then
-        echo "%{$fg[red]%}\u2666 $RUBY_VERSION%{$reset_color%} "
+        echo "$RUBY_VERSION "
     fi
 }
