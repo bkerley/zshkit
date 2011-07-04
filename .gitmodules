@@ -1,3 +1,6 @@
 [submodule "autojump"]
 	path = autojump
 	url = git://github.com/joelthelion/autojump.git
+[submodule "zsh-syntax-highlighting"]
+	path = zsh-syntax-highlighting
+	url = https://github.com/nicoulaj/zsh-syntax-highlighting.git
