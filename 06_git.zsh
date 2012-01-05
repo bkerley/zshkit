@@ -54,7 +54,7 @@ if [[ -x `which git` ]]; then
 		branch=$(git-branch-name)
 		git config branch.$branch.remote origin
 		git config branch.$branch.merge refs/heads/$branch
-		echo "tracking origin/$tracking"
+		echo "tracking origin/$origin"
 	}
 	function github-init () {
 		git config branch.$(git-branch-name).remote origin
