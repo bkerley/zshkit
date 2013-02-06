@@ -1,4 +1,4 @@
-source $HOME/zshkit/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # look at me i can be twlight-mode too
 command_highlight_style="fg=white,bold"
