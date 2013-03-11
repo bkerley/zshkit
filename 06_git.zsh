@@ -10,7 +10,7 @@ if [[ -x `which git` ]]; then
 		git branch 2> /dev/null | grep '^\*' | sed 's/^\*\ //'
 	}
 	function git-dirty () {
-		git status 2> /dev/null | grep "nothing to commit (working directory clean)"
+		git status 2> /dev/null | grep "working directory clean"
 		echo $?
 	}
 	function gsrb () {
@@ -38,7 +38,7 @@ if [[ -x `which git` ]]; then
 			gstatus=$(git status 2> /dev/null)
       push_status=$(git-need-to-push $gstatus 2> /dev/null)
 			branch=$(echo $gstatus | head -1 | sed 's/^# On branch //')
-			dirty=$(echo $gstatus | sed 's/^#.*$//' | tail -2 | grep 'nothing to commit (working directory clean)'; echo $?)
+			dirty=$(echo $gstatus | sed 's/^#.*$//' | tail -2 | grep 'working directory clean'; echo $?)
 			if [[ x$branch != x ]]; then
 				if [[ $dirty = 1 ]] { dirty_color=$fg[magenta] }
 				[ x$branch != x ] && echo "%{$dirty_color%}$branch%{$reset_color%} $push_status"
