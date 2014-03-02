@@ -3,5 +3,5 @@ function be() { [ "$1" = "a" ] && shift; bundle exec "$@"; }
 
 function ccc() {
   file=$(find lib -type f -depth 1 | head -n1)
-  irb -Ilib -r./$file
+  pry -Ilib -r./$file
 }
