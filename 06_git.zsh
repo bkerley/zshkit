@@ -37,7 +37,7 @@ if [[ -x `which git` ]]; then
 		if [[ $git_enable = 1 ]]; then
 			gstatus=$(git status 2> /dev/null)
       push_status=$(git-need-to-push $gstatus 2> /dev/null)
-			branch=$(echo $gstatus | head -1 | sed 's/^# On branch //')
+			branch=$(echo $gstatus | head -1 | sed 's/^On branch //')
 			dirty=$(echo $gstatus | sed 's/^#.*$//' | tail -2 | grep 'nothing to commit'; echo $?)
 			if [[ x$branch != x ]]; then
 				if [[ $dirty = 1 ]] { dirty_color=$fg[magenta] }
