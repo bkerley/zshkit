@@ -5,7 +5,7 @@ function not_run_from_ssh () {
 	echo $?
 }
 
-if [[ -x `which aquamacs` ]]; then
+if [[ -d '/Applications/Emacs.app' ]]; then
   alias am="emacsclient -n"
   EDITOR="emacsclient -a 'mate -w'"
 elif [[ -x `which mate` && $(not_run_from_ssh) = 1 ]]; then
