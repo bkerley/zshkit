@@ -124,6 +124,7 @@ if [[ -o login ]]; then
     preexec_functions=($preexec_functions iterm2_preexec)
 
     iterm2_print_state_data
-    printf "\033]1337;ShellIntegrationVersion=1\007"
+    printf "\033]1337;ShellIntegrationVersion=2;shell=zsh\007"
   fi
 fi
+alias imgcat=~/.iterm2/imgcat; alias it2dl=~/.iterm2/it2dl
