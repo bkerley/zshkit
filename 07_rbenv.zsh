@@ -3,4 +3,7 @@ if [[ -x `which rbenv` ]]; then
    function ruby-version-prompt () {
        echo "$(rbenv version-name) "
    }
+else
+   function ruby-version-prompt () {
+   }
 fi
